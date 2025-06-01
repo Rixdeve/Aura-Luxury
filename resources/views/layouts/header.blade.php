@@ -9,7 +9,6 @@
         <nav class="hidden md:flex space-x-6">
             <a href="{{ route('index') }}" class="text-black hover:text-gray-900 font-semibold">Home</a>
             <a href="{{ route('shop') }}" class="text-black hover:text-gray-700 font-semibold">Shop</a>
-            <a href="}" class="text-black hover:text-gray-700 font-semibold">Contact</a>
         </nav>
 
         <div class="flex items-center space-x-8">
@@ -18,7 +17,7 @@
                 <img src="/images/cart.png" alt="Cart" class="h-6 w-6">
             </a>
 
-            <a href="{{ route('dashboard') }}">
+            <a href="{{ route('profile.page') }}">
                 <img src="/images/user.png" alt="Profile" class="h-6 w-6">
             </a>
 

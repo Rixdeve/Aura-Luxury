@@ -23,7 +23,7 @@
     <x-banner />
 
     <div class="min-h-screen bg-gray-100">
-        <!-- @include('layouts.admin-header') -->
+        @include('layouts.admin-header')
         <!-- Page Heading -->
         @if (isset($header))
         <header class="bg-white shadow">

@@ -3,41 +3,21 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Orders as OrdersModel;
+use App\Models\Orders;
 
 class OrderView extends Component
 {
+    public $order;
 
-
-
-    public $products;
-    public $orders;
-
-    public function mount()
+    public function mount($id)
     {
-        $this->orders = OrdersModel::all();
+        $this->order = Orders::findOrFail($id);
     }
-
-    public function updateStatus($orderId, $newStatus)
-    {
-        $order = OrdersModel::where('_id', $orderId)->first();
-        if ($order) {
-            $order->status = $newStatus;
-            $order->save();
-            session()->flash('success', 'Order status updated successfully!');
-        } else {
-            session()->flash('error', 'Order not found.');
-        }
-    }
-
 
     public function render()
     {
-        $this->orders = OrdersModel::all();
-
         return view('livewire.order-view', [
-            'orders' => $this->orders,
-        ])
-            ->extends('layouts.admin');
+            'order' => $this->order,
+        ])->extends('layouts.admin');
     }
 }

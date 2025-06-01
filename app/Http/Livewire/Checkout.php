@@ -138,7 +138,7 @@ class Checkout extends Component
         }
         $this->showPaymentPopup = false;
         session()->flash('success', 'Payment confirmed successfully!');
-        return redirect()->route('orders.confirm');
+        return redirect()->route('profile.page');
     }
 
     public function cancelPayment()
@@ -158,7 +158,7 @@ class Checkout extends Component
 
         $this->showPaymentPopup = false;
         session()->flash('error', 'Payment failed');
-        return redirect()->route('orders.confirm');
+        return redirect()->route('profile.page');
     }
 
     public function reduceStock()
@@ -171,6 +171,7 @@ class Checkout extends Component
             }
         }
     }
+
     protected function checkStockAvailability()
     {
         foreach ($this->cartItems as $item) {

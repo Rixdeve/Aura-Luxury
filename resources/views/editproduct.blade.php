@@ -1,16 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Update Product')
 
 @section('content')
-<div class="max-w-6xl mx-auto mt-8">
+<div class="max-w-6xl mx-auto mt-8 overflow-x-auto pl-72">
     <h2 class="text-3xl font-semibold text-center mb-8">Update Product</h2>
 
     <form method="POST" action="{{ route('product.update', $product->_id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
-        <!-- Product Name -->
         <div class="mb-4">
             <label for="product_name" class="block text-sm font-medium text-gray-700">Product Name</label>
             <input type="text" name="product_name" id="product_name"
@@ -21,7 +20,6 @@
             @enderror
         </div>
 
-        <!-- Description -->
         <div class="mb-4">
             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
             <textarea name="description" id="description" rows="3"
@@ -32,7 +30,6 @@
             @enderror
         </div>
 
-        <!-- Price -->
         <div class="mb-4">
             <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
             <input type="number" name="price" id="price"
@@ -44,7 +41,6 @@
         </div>
 
 
-        <!-- Product Type -->
         <div class="mb-4">
             <label for="types" class="block text-sm font-medium text-gray-700">Type</label>
             <select name="types" id="types"
@@ -59,7 +55,6 @@
             @enderror
         </div>
 
-        <!-- Availability -->
         <div class="mb-4">
             <label for="availability" class="block text-sm font-medium text-gray-700">Availability</label>
             <select name="availability" id="availability"
@@ -76,7 +71,6 @@
             @enderror
         </div>
 
-        <!-- Quantity -->
         <div class="mb-4">
             <label for="qty" class="block text-sm font-medium text-gray-700">Quantity</label>
             <input type="number" name="qty" id="qty"
@@ -87,7 +81,6 @@
             @enderror
         </div>
 
-        <!-- Brand -->
         <div class="mb-4">
             <label for="brand" class="block text-sm font-medium text-gray-700">Brand</label>
             <input type="text" name="brand" id="brand"
@@ -98,7 +91,6 @@
             @enderror
         </div>
 
-        <!-- Watch Color -->
         <div class="mb-4">
             <label for="watch_color" class="block text-sm font-medium text-gray-700">Watch Color</label>
             <input type="text" name="watch_color" id="watch_color"
@@ -109,7 +101,6 @@
             @enderror
         </div>
 
-        <!-- Image URL -->
         <div class="mb-4">
             <label for="img_url" class="block text-sm font-medium text-gray-700">Image</label>
             <input type="file" name="img_url" id="img_url"
@@ -119,7 +110,6 @@
             @enderror
         </div>
 
-        <!-- Category -->
         <div class="mb-4">
             <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
             <select name="category" id="category"

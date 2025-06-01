@@ -7,16 +7,15 @@ use App\Models\Product;
 
 class AdminProducts extends Component
 {
-    public $products;
-
-    public function mount()
-    {
-        $this->products = Product::all();
-    }
+    public $search = '';
 
     public function render()
     {
-        return view('livewire.admin-products');
+        $products = Product::where('product_name', 'like', '%' . $this->search . '%')->get();
+
+        return view('livewire.admin-products', [
+            'products' => $products
+        ])->extends('layouts.admin');
     }
 
     public function delete($id)
@@ -24,7 +23,6 @@ class AdminProducts extends Component
         $product = Product::find($id);
         if ($product) {
             $product->delete();
-            $this->products = Product::all(); // Refresh list
             session()->flash('success', 'Product deleted successfully.');
         } else {
             session()->flash('error', 'Product not found.');

@@ -95,19 +95,6 @@
                                 <p class="mt-4 text-sm text-slate-500 font-medium">Pay with your debit or credit card
                                 </p>
                             </div>
-                            <div class="bg-gray-100 p-4 rounded-md border border-gray-300 max-w-sm">
-                                <div>
-                                    <div class="flex items-center">
-                                        <input type="radio" wire:model="paymentMethod" name="method" value="cod"
-                                            class="w-5 h-5 cursor-pointer" id="cod" />
-                                        <label for="cod" class="ml-4 flex gap-2 cursor-pointer">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxVK2Ldio3wbcompe76GCOvyURqeR96FG-Ow&s"
-                                                class="w-20" alt="Cash on Delivery" />
-                                        </label>
-                                    </div>
-                                </div>
-                                <p class="mt-4 text-sm text-slate-500 font-medium">Pay cash on door step</p>
-                            </div>
                         </div>
                     </div>
 

@@ -8,14 +8,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Orders extends Component
 {
+    public $search = '';
 
-    public $products;
-    public $orders;
 
-    public function mount()
-    {
-        $this->orders = OrdersModel::all();
-    }
 
     public function updateStatus($orderId, $newStatus)
     {
@@ -32,10 +27,12 @@ class Orders extends Component
 
     public function render()
     {
-        $this->orders = OrdersModel::all();
+
+        $orders = OrdersModel::orderBy('created_at', 'desc')->get();
+
 
         return view('livewire.orders', [
-            'orders' => $this->orders,
+            'orders' => $orders,
         ])
             ->extends('layouts.admin');
     }

@@ -27,11 +27,6 @@
                     @endif
                 </div>
 
-                <div class="mb-6">
-                    <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantity:</label>
-                    <input type=" number" id="quantity" name="quantity" min="1" value="1" max="5"
-                        class="w-12 text-center rounded-md border-gray-300  shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                </div>
                 <!-- <h1>{{ $product->id }}</h1> -->
                 <div class="flex space-x-4 mb-6">
                     <button wire:click="addToCart('{{ $product->id }}')" class="bg-indigo-600 flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-indigo-700
