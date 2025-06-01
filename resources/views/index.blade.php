@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="w-screen">
-    <img src="{{ asset('images/Banner.png') }}" alt="Aura banner" class="w-full h-auto">
+    <img src="{{ asset('images/banner.png') }}" alt="Aura banner" class="w-full h-auto">
 
 </div>
 <section class="py-12 px-4 max-w-6xl mx-auto">
