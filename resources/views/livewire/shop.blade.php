@@ -2,7 +2,6 @@
     <section class="py-8 px-4 max-w-screen mx-auto bg-white">
         <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">Do it with Aura.</h2>
         <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Sidebar -->
             <div class="w-full lg:w-1/4">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-4 text-gray-700">Filters</h3>
@@ -50,10 +49,11 @@
                     <div
                         class="flex flex-col rounded-sm overflow-hidden shadow-md hover:scale-[1.01] transition-all relative">
                         <a href="{{ route('product.view', $product->_id) }}" class="block">
-                            <div class="w-full">
+                            <div class="w-full h-52 overflow-hidden bg-white">
                                 <img src="https://storage.googleapis.com/aura_images/{{ $product->img_url }}"
-                                    alt="{{ $product->product_name }}">
+                                    alt="{{ $product->product_name }}" class="w-full h-full object-cover">
                             </div>
+
                             <div class="p-4">
                                 <h5 class="text-sm sm:text-base font-semibold text-slate-900 line-clamp-2">
                                     {{ $product->product_name }}

@@ -13,6 +13,7 @@ use App\Http\Livewire\Profile;
 use App\Http\Livewire\OrderView;
 use App\Http\Livewire\AdminDashboard;
 use App\Http\Livewire\AdminProducts;
+use App\Http\Livewire\Users;
 use App\Http\Middleware\AdminMiddleware;
 
 
@@ -62,7 +63,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/checkout', Checkout::class)->middleware('auth')->name('checkout');
-Route::get('/orders', Orders::class)->middleware('auth')->name('orders');
+// Route::get('/orders', Orders::class)->middleware('auth')->name('orders');
 
 
 Route::get('/orderconfirm', function () {
@@ -80,6 +81,8 @@ Route::middleware([AdminMiddleware::class])->group(function () {
     Route::put('/product/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/admin-products', AdminProducts::class)->name('admin.products');
     Route::get('/admin/order/{id}', OrderView::class)->name('order.view');
+    Route::get('/orders', Orders::class)->name('orders');
+    Route::get('/users', Users::class)->name('users');
 });
 
 

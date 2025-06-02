@@ -25,7 +25,7 @@
         <h6 class="text-blue-600 text-[15px] font-semibold px-4">Information</h6>
         <ul class="space-y-1 mt-3">
             <li>
-                <a href=""
+                <a href="{{ route('users') }}"
                     class="text-slate-800 font-medium hover:text-slate-900 text-[15px] flex items-center hover:bg-gray-100 rounded px-4 py-2 transition-all">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-3"
                         viewBox="0 0 512 512">
