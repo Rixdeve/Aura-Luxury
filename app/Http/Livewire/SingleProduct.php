@@ -17,10 +17,8 @@ class SingleProduct extends Component
 
     public function mount($id)
     {
-        // Fetch the product by its ID
         $this->product = Product::findOrFail($id);
 
-        // Generate the temporary URL for the image
         if ($this->product->img_url) {
             $this->tempUrl = Storage::disk('s3_gcs')->temporaryUrl($this->product->img_url, now()->addMinutes(30));
         }

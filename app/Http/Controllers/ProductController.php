@@ -87,7 +87,6 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validate the incoming request data
         $request->validate([
             'product_name'      => 'required|string|max:255',
             'description'       => 'required|string|max:1000',
@@ -105,7 +104,6 @@ class ProductController extends Controller
         $qty = (int) $request->input('qty');
         $price = (float) $request->input('price');
 
-        // Update the product with new data
         $product->update([
             'product_name'     => $request->input('product_name'),
             'description'      => $request->input('description'),
@@ -127,7 +125,6 @@ class ProductController extends Controller
         }
 
 
-        // Redirect to the product list or show the updated product
         return redirect()->route('product.view', $product->_id)->with('success', 'Product updated successfully');
     }
 }
