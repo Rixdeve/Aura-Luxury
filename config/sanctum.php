@@ -64,6 +64,9 @@ return [
 
     'token_prefix' => env('SANCTUM_TOKEN_PREFIX', ''),
 
+    // 'personal_access_token_model' => App\Models\PersonalAccessToken::class,
+
+
     /*
     |--------------------------------------------------------------------------
     | Sanctum Middleware

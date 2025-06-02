@@ -16,17 +16,15 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // 1) If not logged in, send to login
         if (! Auth::check()) {
             return redirect()->route('login');
         }
 
-        // 2) If role isn’t exactly 'admin', abort
         if (Auth::user()->role !== 'admin') {
             abort(403, 'Not Sure What You Are Doing Here ??');
         }
 
-        // 3) Otherwise, continue
+
         return $next($request);
     }
 }
