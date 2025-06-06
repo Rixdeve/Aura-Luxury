@@ -6,18 +6,19 @@ use Illuminate\Auth\Authenticatable;
 use MongoDB\Laravel\Eloquent\Model as Eloquent;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Sanctum\HasApiTokens;
 use \Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class User extends Eloquent implements AuthenticatableContract
+class User extends Eloquent implements JWTSubject, AuthenticatableContract
 {
 
 
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasApiTokens, Authenticatable,  HasProfilePhoto, Notifiable, TwoFactorAuthenticatable;
+    use Authenticatable,  HasProfilePhoto, Notifiable, TwoFactorAuthenticatable;
 
 
     /**
@@ -65,5 +66,15 @@ class User extends Eloquent implements AuthenticatableContract
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }
